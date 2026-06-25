@@ -1,0 +1,41 @@
+.form-select:focus {
+  border-color: #999;
+  outline: none;
+  box-shadow: none;
+}
+
+.form-control:focus {
+  border-color: #999;
+  box-shadow: none;
+  outline: 0 none;
+}
+
+.menu-drop-user {
+  position: absolute;
+  top: -50%;
+  right: 0;
+  left: auto;
+}
+
+.sidebar-inner {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.sidebar-inner::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar-inner::-webkit-scrollbar-track {
+  border-radius: 8px;
+}
+
+.sidebar-inner::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 10px;
+}
+
+.sidebar-inner::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}

@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.toastBody {
+  font-family: "Atlas Grotesk Web", Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+}
+
+.table-div {
+  min-height: 400px;
+  min-height: 70vh;
+}
+
+.tooltip-cell {
+  position: relative;
+  max-width: 200px;
+}
+
+.tooltip-text {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.tooltip-box {
+  display: none;
+  position: absolute;
+  background: #333;
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 6px;
+  top: 100%;
+  left: 0;
+  z-index: 9999;
+  white-space: normal;
+  width: 310px;
+}
+
+.tooltip-cell:hover .tooltip-box {
+  display: block;
+}
+
+.home-usercontent {
+  justify-content: center !important;
+}
+
+.react-select__control {
+  min-height: 32px;
+  font-size: 13px;
+}
+
+.react-select__value-container {
+  padding: 0 6px;
+}
+
+.react-select__indicator {
+  padding: 4px;
+}

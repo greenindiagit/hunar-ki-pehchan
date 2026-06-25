@@ -1,0 +1,21 @@
+.hero-section {
+  display: flex;
+  align-items: center;
+  padding: 100px 0 0;
+  overflow: hidden;
+}
+.hero-banner {
+  height: auto;
+  object-fit: cover;
+}
+
+/* .carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1); 
+} */
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: brightness(0) saturate(100%) invert(18%) sepia(91%) saturate(7481%)
+    hue-rotate(356deg) brightness(97%) contrast(118%);
+}

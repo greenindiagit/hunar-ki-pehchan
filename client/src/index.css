@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+html,
+body {
+  font-family: "Google Sans", sans-serif;
+  font-size: 16px;
+  color: #656b76;
+  /* color: #b4b7be; */
+  line-height: 1.5;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #ffffff;
+}
+* {
+  box-sizing: border-box;
+}
