@@ -85,11 +85,7 @@ export const getEpisodeById = asyncHandler(async (req, res) => {
 });
 
 export const updateEpisode = asyncHandler(async (req, res) => {
-  const episode = await EpisodeModel.findByIdAndUpdate(
-    req.params.id,
-    req.body,
-    { new: true }
-  );
+  const episode = await EpisodeModel.findById(req.params.id);
 
   if (!episode) {
     return res.status(404).json({
@@ -97,6 +93,47 @@ export const updateEpisode = asyncHandler(async (req, res) => {
       message: "Episode not found",
     });
   }
+
+  const {
+    title,
+    videoUrl,
+    description,
+    guestName,
+    duration,
+    views,
+    isPopular,
+    status,
+  } = req.body;
+
+  let image = episode.image;
+
+  // New image uploaded
+  const file = req.files?.image?.[0];
+
+  if (file?.buffer) {
+    // Optional: Delete old image
+    if (episode.image) {
+      const oldImagePath = path.join("uploads", episode.image);
+
+      if (fs.existsSync(oldImagePath)) {
+        fs.unlinkSync(oldImagePath);
+      }
+    }
+
+    image = await compressImage(file.buffer, "episodes");
+  }
+
+  episode.title = title;
+  episode.videoUrl = videoUrl;
+  episode.description = description;
+  episode.guestName = guestName;
+  episode.duration = duration;
+  episode.views = Number(views) || 0;
+  episode.isPopular = isPopular === "true" || isPopular === true;
+  episode.status = status === "true" || status === true;
+  episode.image = image;
+
+  await episode.save();
 
   return res.status(200).json({
     success: true,
