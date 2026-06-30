@@ -47,7 +47,7 @@ export const createBanner = asyncHandler(async (req, res) => {
 // get all
 
 export const getAllBanners = asyncHandler(async (req, res) => {
-  const banners = await BannerModel.find().sort({ createdAt: -1 });
+  const banners = await BannerModel.find().sort({ createdAt: 1 });
 
   return res.status(200).json({
     success: true,

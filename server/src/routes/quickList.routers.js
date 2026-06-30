@@ -15,5 +15,4 @@ router.get("/", getQuickLinks);
 router.get("/:id", getQuickLinkById);
 router.put("/:id", updateQuickLink);
 router.delete("/:id", deleteQuickLink);
-
 export default router;
